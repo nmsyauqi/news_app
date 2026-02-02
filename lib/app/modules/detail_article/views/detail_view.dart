@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/detail_controller.dart';
+import '../../../data/model/news_model.dart';
 
 class DetailView extends GetView<DetailController> {
   const DetailView({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class DetailView extends GetView<DetailController> {
         return SingleChildScrollView(
           child: Column(
             children: [
-              Image.network(data.urlToImage),
+              Image.network(data.imageToUrl),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(

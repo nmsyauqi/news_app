@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:news_app/app/data/model/news_model.dart';
-import 'package:news_app/app/data/service/news_service.dart';
+import 'package:news_app/app/data/services/news_service.dart';
 
 class HomeController extends GetxController {
   final NewsService newsService = Get.find();

@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:news_app/app/data/service/news_service.dart';
+import 'package:news_app/app/data/services/news_service.dart';
 
 import '../controllers/home_controller.dart';
 
