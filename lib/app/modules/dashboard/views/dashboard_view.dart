@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:news_app/app/modules/home/views/home_view.dart';
 import 'package:news_app/app/modules/pencarian/views/pencarian_view.dart';
-
 import '../controllers/dashboard_controller.dart';
 
 class DashboardView extends GetView<DashboardController> {
@@ -13,7 +12,7 @@ class DashboardView extends GetView<DashboardController> {
     return Scaffold(
       body: Obx(
         () => IndexedStack(
-          index:controller.tabIndex.value,
+          index:controller.selectedIndex.value,
           children: [
             HomeView(),
             PencarianView(),
@@ -22,8 +21,8 @@ class DashboardView extends GetView<DashboardController> {
       ),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
-          onTap: controller.changeTabIndex,
-          currentIndex: controller.tabIndex.value,
+          onTap: controller.changeIndex,
+          currentIndex: controller.selectedIndex.value,
           showSelectedLabels: true,
           showUnselectedLabels: true,
           type: BottomNavigationBarType.fixed,

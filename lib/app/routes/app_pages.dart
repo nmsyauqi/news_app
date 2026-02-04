@@ -10,12 +10,13 @@ import '../modules/pencarian/views/pencarian_view.dart';
 import '../modules/detail_article/bindings/detail_binding.dart';
 import '../modules/detail_article/views/detail_view.dart';
 
+
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.DASHBOARD;
 
   static final routes = [
     GetPage(
@@ -33,11 +34,10 @@ class AppPages {
       page: () => const PencarianView(),
       binding: PencarianBinding(),
     ),
-    // Perbaikan Bagian Ini (GetPage bukan Getpage)
     GetPage(
       name: _Paths.DETAIL_ARTICLE,
       page: () => const DetailView(),
-      binding: DetailArticleBinding(), // Pastikan nama class Binding benar
+      binding: DetailArticleBinding(), 
     ),
   ];
 }

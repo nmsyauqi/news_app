@@ -21,7 +21,7 @@ class PencarianView extends GetView<PencarianController> {
             children: [
             const TextField(
               decoration: InputDecoration(
-                hintText: 'apalah cona tenask',
+                hintText: 'cari aja bray',
                 prefixIcon: Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),

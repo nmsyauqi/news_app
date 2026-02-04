@@ -1,16 +1,12 @@
+// lib/app/modules/dashboard/controllers/dashboard_controller.dart
 import 'package:get/get.dart';
 
 class DashboardController extends GetxController {
-  //TODO: Implement DashboardController
-  final tabIndex = 0.obs;
+  // Variabel untuk menyimpan index tab yang aktif (0 = Home, 1 = Pencarian)
+  var selectedIndex = 0.obs;
 
-  void changeTabIndex(int index) {
-    tabIndex.value = index;
+  // Fungsi untuk ganti tab
+  void changeIndex(int index) {
+    selectedIndex.value = index;
   }
-
-  final count = 0.obs;
-
-
-
-  void increment() => count.value++;
 }
