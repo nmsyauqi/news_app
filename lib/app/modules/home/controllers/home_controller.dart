@@ -1,31 +1,31 @@
 import 'package:get/get.dart';
-import 'package:news_app/app/data/model/news_model.dart';
-import 'package:news_app/app/data/services/news_service.dart';
+import '../../../data/model/news_model.dart';
+import '../../../data/services/news_service.dart'; // Pastikan path services pakai 's'
 
 class HomeController extends GetxController {
-  final NewsService newsService = Get.find();
-
-  var articles = <Article>[].obs;
+  // Panggil Service
+  final NewsService _newsService = NewsService();
+  
+  // Tampungan data
+  var newsList = <Article>[].obs;
   var isLoading = true.obs;
 
-  final count = 0.obs;
-
-  void getNewsIDN() async {
-    try {
-      isLoading(true);
-      final response = await newsService.getNewsIDN();
-      if(response.status.isOk){
-        final newsData = NewsResponse.fromJson(response.body);
-        articles.assignAll(newsData.articles);
-      }
-    } catch (e) {
-        print("error $e");
-    } finally {
-        isLoading(false);
-    }
+  @override
+  void onInit() {
+    super.onInit();
+    fetchNews();
   }
 
-
-
-  void increment() => count.value++;
+  void fetchNews() async {
+    try {
+      isLoading(true);
+      // PERBAIKAN: Gunakan 'fetchTopHeadlines' (bukan getNewsIDN)
+      var response = await _newsService.fetchTopHeadlines();
+      newsList.assignAll(response.articles);
+    } catch (e) {
+      print("Error fetching news: $e");
+    } finally {
+      isLoading(false);
+    }
+  }
 }

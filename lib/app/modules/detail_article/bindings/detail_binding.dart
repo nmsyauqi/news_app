@@ -1,10 +1,12 @@
-// lib/app/modules/detail_article/bindings/detail_binding.dart
 import 'package:get/get.dart';
 import '../controllers/detail_controller.dart';
 
-class DetailBinding extends Bindings {
+class DetailArticleBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<DetailController>(() => DetailController());
+    // Pastikan nama class Controller di sini SAMA dengan di file controller
+    Get.lazyPut<DetailArticleController>(
+      () => DetailArticleController(),
+    );
   }
 }
