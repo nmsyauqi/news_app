@@ -27,8 +27,8 @@ class Article {
   final String? description;
   final String? url;
   final String? urlToImage;
-  final String? publishedAt; // Menambahkan ini
-  final String? content;     // Menambahkan ini
+  final String? publishedAt; 
+  final String? content;     
 
   Article({
     required this.source,
@@ -49,8 +49,8 @@ class Article {
       description: json['description'],
       url: json['url'],
       urlToImage: json['urlToImage'],
-      publishedAt: json['publishedAt'], // Mapping JSON ke variabel
-      content: json['content'],         // Mapping JSON ke variabel
+      publishedAt: json['publishedAt'], 
+      content: json['content'],         
     );
   }
 }
