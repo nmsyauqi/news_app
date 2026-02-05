@@ -5,7 +5,7 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const PENCARIAN = _Paths.PENCARIAN;
-  static const DETAIL_ARTICLE = _Paths.DETAIL_ARTICLE; 
+  static const DETAIL_ARTICLE = _Paths.DETAIL_ARTICLE;
 }
 
 abstract class _Paths {
@@ -13,5 +13,5 @@ abstract class _Paths {
   static const HOME = '/home';
   static const DASHBOARD = '/dashboard';
   static const PENCARIAN = '/pencarian';
-  static const DETAIL_ARTICLE = '/detail-article'; 
+  static const DETAIL_ARTICLE = '/detail-article';
 }

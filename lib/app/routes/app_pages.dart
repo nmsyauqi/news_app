@@ -1,22 +1,24 @@
 import 'package:get/get.dart';
 
-// Import Binding dan View kamu
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
+import '../modules/detail_article/bindings/detail_article_binding.dart';
+import '../modules/detail_article/bindings/detail_article_binding.dart';
+import '../modules/detail_article/views/detail_article_view.dart';
+import '../modules/detail_article/views/detail_article_view.dart';
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
 import '../modules/pencarian/bindings/pencarian_binding.dart';
 import '../modules/pencarian/views/pencarian_view.dart';
-import '../modules/detail_article/bindings/detail_binding.dart';
-import '../modules/detail_article/views/detail_view.dart';
 
+// Import Binding dan View kamu
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.DETAIL_ARTICLE;
+  static const INITIAL = Routes.DASHBOARD;
 
   static final routes = [
     GetPage(
@@ -36,8 +38,15 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DETAIL_ARTICLE,
-      page: () => const DetailView(),
-      binding: DetailArticleBinding(), 
+      page: () => const DetailArticleView(),
+      binding: DetailArticleBinding(),
+      children: [
+        GetPage(
+          name: _Paths.DETAIL_ARTICLE,
+          page: () => const DetailArticleView(),
+          binding: DetailArticleBinding(),
+        ),
+      ],
     ),
   ];
 }

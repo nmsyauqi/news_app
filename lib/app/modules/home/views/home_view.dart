@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
-import '../../../routes/app_pages.dart'; // Import Routes untuk navigasi
+import '../../../routes/app_pages.dart'; 
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
@@ -13,19 +13,15 @@ class HomeView extends GetView<HomeController> {
         title: const Text('Berita Utama'),
         centerTitle: true,
       ),
-      // Gunakan Obx untuk mendengarkan perubahan data dari Controller
       body: Obx(() {
-        // 1. Jika sedang loading, tampilkan putaran loading
         if (controller.isLoading.value) {
           return const Center(child: CircularProgressIndicator());
         }
 
-        // 2. Jika data kosong, beri info
         if (controller.newsList.isEmpty) {
           return const Center(child: Text("Tidak ada berita saat ini"));
         }
 
-        // 3. Jika ada data, tampilkan ListView
         return ListView.builder(
           itemCount: controller.newsList.length,
           padding: const EdgeInsets.all(16),
@@ -41,8 +37,6 @@ class HomeView extends GetView<HomeController> {
               ),
               child: InkWell(
                 onTap: () {
-                  // --- NAVIGASI KE DETAIL ---
-                  // Kita kirim objek 'article' ke halaman detail
                   Get.toNamed(Routes.DETAIL_ARTICLE, arguments: article);
                 },
                 borderRadius: BorderRadius.circular(12),
